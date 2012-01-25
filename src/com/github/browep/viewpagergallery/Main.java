@@ -55,7 +55,17 @@ public class Main extends FragmentActivity implements AdapterView.OnItemSelected
 
     }
 
-    private void updateUI(final int i){
+    // gallery item selected
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+        updateUI(i);
+    }
+
+    // view pager item selected
+    public void onPageSelected(int i) {
+        updateUI(i);
+    }
+
+    private void updateUI(final int i) {
         handler.post(new Runnable() {
             public void run() {
                 gallery.setSelection(i);
@@ -65,26 +75,13 @@ public class Main extends FragmentActivity implements AdapterView.OnItemSelected
         });
     }
 
-    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-        updateUI(i);
-    }
-
     public void onNothingSelected(AdapterView<?> adapterView) {    }
 
     public void onPageScrolled(int i, float v, int i1) {    }
 
-    public void onPageSelected(int i) {
-        updateUI(i);
-    }
-
     public void onPageScrollStateChanged(int i) {    }
 
     public class ImageAdapter extends BaseAdapter {
-        int mGalleryItemBackground;
-
-        public ImageAdapter() {
-
-        }
 
         public int getCount() {
             return mImageIds.length;
@@ -99,12 +96,12 @@ public class Main extends FragmentActivity implements AdapterView.OnItemSelected
         }
 
         public View getView(int position, View convertView, ViewGroup parent) {
+
             ImageView imageView = new ImageView(Main.this);
 
             imageView.setImageResource(mImageIds[position]);
             imageView.setLayoutParams(new Gallery.LayoutParams(150, 100));
             imageView.setScaleType(ImageView.ScaleType.FIT_XY);
-            imageView.setBackgroundResource(mGalleryItemBackground);
 
             return imageView;
         }
