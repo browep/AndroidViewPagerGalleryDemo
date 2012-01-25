@@ -129,12 +129,6 @@ public class Main extends FragmentActivity implements AdapterView.OnItemSelected
                     imageView.setImageResource(mImageIds[position]);
                     return imageView;
                 }
-
-                @Override
-                public void onDestroyView() {
-                    super.onDestroyView();
-
-                }
             };
         }
     }
