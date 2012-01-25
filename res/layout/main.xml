@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+        >
+    <FrameLayout android:layout_height="0px"
+                 android:layout_width="fill_parent"
+                 android:layout_weight="1"
+            >
+        <android.support.v4.view.ViewPager android:id="@+id/view_pager"
+                                           android:layout_height="fill_parent"
+                                           android:layout_width="fill_parent"
+                                           android:padding="10dip"
+                />
+        <TextView android:layout_height="wrap_content"
+                  android:layout_width="wrap_content"
+                  android:layout_gravity="bottom|center_horizontal"
+                  android:textColor="#FFF"
+                  android:padding="8dip"
+                  android:layout_margin="6dip"
+                  android:background="#7775"
+                  android:textSize="14pt"
+                  android:id="@+id/title"
+                />
+    </FrameLayout>
+
+    <Gallery android:id="@+id/gallery"
+             android:layout_height="100dip"
+             android:layout_width="fill_parent"
+             android:spacing="4dip"
+             />
+</LinearLayout>
+
